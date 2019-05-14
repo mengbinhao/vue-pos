@@ -13,6 +13,8 @@ npm run lint
 1. mockplus draw prototype
 ![](./doc/images/page.png)
 2. vue
+   1. encapsulate child/parent components
+   2. lifecycle
 3. axios
    1. created hook to fetch data
    2. axios all
@@ -23,7 +25,7 @@ npm run lint
         })
       )
    ```
-   3. build tabObjs after sync fetch data from server
+   1. build tabObjs after sync fetch data from server
 4. [阿里巴巴矢量图](https://www.iconfont.cn/)
   - **sysmbol**
   - font class
