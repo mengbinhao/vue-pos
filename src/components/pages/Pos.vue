@@ -39,10 +39,10 @@ export default {
       tableData: [],
       oftenGoods: [],
       subTabs: [
-        {label:'汉堡', name:'first', src:'https://i.loli.net/2019/05/13/5cd93649ebdd420644.jpg'},
-        {label:'主食', name:'second', src:'https://i.loli.net/2019/05/13/5cd93649ebdd420644.jpg'},
-        {label:'小食', name:'third', src:'https://i.loli.net/2019/05/13/5cd93649ebdd420644.jpg'},
-        {label:'套餐', name:'forth', src:'https://i.loli.net/2019/05/13/5cd93649ebdd420644.jpg'}
+        {label:'汉堡', name:'first'},
+        {label:'主食', name:'second'},
+        {label:'小食', name:'third'},
+        {label:'套餐', name:'forth'}
       ],
       displayTabs:[]
     };
@@ -138,8 +138,8 @@ export default {
     buildTabObj(data) {
       let tabObjs = []
       data.forEach((item, index) => {
-        let {label, name, src} = this.subTabs[index],
-            tabs = {label, name, src, 'typeGoods':item}
+        let {label, name} = this.subTabs[index],
+            tabs = {label, name, 'typeGoods':item}
         tabObjs.push(tabs)
       })
       return tabObjs

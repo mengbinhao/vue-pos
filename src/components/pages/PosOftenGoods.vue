@@ -46,5 +46,6 @@ export default {
 }
 .o-price {
   color: #58b7ff;
+  padding-left: 5px;
 }
 </style>

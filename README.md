@@ -47,3 +47,4 @@ npm run lint
     serve -s dist
     ```
     3. `webpack-bundle-analyzer`
+       1. `npm i build`看三种状态

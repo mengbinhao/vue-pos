@@ -15,7 +15,7 @@
               @click="addGoods(typeGoods)"
             >
               <span class="foodImg">
-                <img :src="tabObj.src" width="100%">
+                <img :src="typeGoods.goodsImg" width="100%">
               </span>
               <span class="foodName">{{typeGoods.goodsName}}</span>
               <span class="foodPrice">{{typeGoods.price}}</span>
@@ -61,7 +61,7 @@ export default {
   border: 1px solid #e5e9f2;
   background-color: #fff;
   float: left;
-  /* height: auto; */
+  height: auto;
   width: 25%;
   overflow: hidden;
   padding: 5px;
