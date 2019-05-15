@@ -15,7 +15,14 @@ npm run lint
 2. vue
    1. encapsulate child/parent components
    2. lifecycle
-3. axios
+   3. extends
+   4. mixins
+   5. extends
+   6. computed
+   7. custom directive
+3. vue-router
+4. vuex
+5. axios
    1. created hook to fetch data
    2. axios all
    ```javascript
@@ -26,7 +33,7 @@ npm run lint
       )
    ```
    1. build tabObjs after sync fetch data from server
-4. [阿里巴巴矢量图](https://www.iconfont.cn/)
+6. [阿里巴巴矢量图](https://www.iconfont.cn/)
   - **sysmbol**
   - font class
 5. element-ui for vue-cli 3

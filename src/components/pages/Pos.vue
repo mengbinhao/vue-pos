@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import axios from "axios";
-import PosOrder from "./PosOrder";
-import PosOftenGoods from "./PosOftenGoods";
-import PosTypeGoods from "./PosTypeGoods";
+import axios from "axios"
+import PosOrder from "./PosOrder"
+import PosOftenGoods from "./PosOftenGoods"
+import PosTypeGoods from "./PosTypeGoods"
 
 export default {
   name: "Pos",

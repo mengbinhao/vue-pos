@@ -18,9 +18,9 @@
           </template>
         </el-table-column>
       </el-table>
-      <!-- <div class="total">
-				<small>数量: </small>{{ totalCount }} &nbsp;&nbsp;&nbsp;&nbsp;<small>金额: </small>{{ totalPrice }}元
-      </div>-->
+      <div v-if="tableData.length" class="total">
+				<small>数量: </small>{{ totalCount }} &nbsp;&nbsp;&nbsp;&nbsp;<small>金额: </small><span v-pricecolor="{color:'red'}">{{ totalPrice }}</span>元
+      </div>
       <div class="div-btn">
         <el-button type="warning" size="small">挂单</el-button>
         <el-button type="danger" size="small" @click="deleteAllGoods">删除</el-button>
@@ -32,8 +32,19 @@
   </el-tabs>
 </template>
 <script>
+import Mix from '../common/Mix'
+import Extend from '../common/Extend'
+
 export default {
   name: "PosOrder",
+  mixins: [Mix],
+  extends: Extend,
+  created() {
+    console.log(`this is own created`)
+  },
+  updated() {
+    console.log(`this is own updated`)
+  },
   props: {
     tableData: {
       type: Array,
@@ -42,7 +53,8 @@ export default {
   },
   data() {
     return {
-      orderType: "first"
+      orderType: "first",
+      dynamicleft: 500
     }
   },
   methods: {
@@ -94,6 +106,26 @@ export default {
 		deleteGoods(goods) {
 			this.$emit('deleteGoods', goods)
 		}
+  },
+  computed: {
+    totalCount() {
+      return this.tableData.reduce((acc, cur) => {
+        return acc += cur.count
+      }, 0)
+    },
+    totalPrice() {
+      return this.tableData.reduce((acc, cur) => {
+        return acc += cur.count * cur.price
+      }, 0)
+    }
+  },
+  directives: {
+    pricecolor: {
+      inserted(el, binding){
+        //el.style = `color:${binding.value.color}`
+        el.style.color = binding.value.color
+      }
+    }
   }
 };
 </script>
@@ -101,9 +133,9 @@ export default {
 .div-btn {
   margin: 10px;
 }
-/* .total {
+.total {
   background-color: #fff;
   padding: 10px;
   border-bottom: 1px solid #D3DCE6;
-} */
+}
 </style>
