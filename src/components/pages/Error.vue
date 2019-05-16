@@ -1,13 +1,10 @@
 <template>
 	<div>
-
+		<i class="el-icon-share"></i>
 	</div>
 </template>
 <script>
 export default {
-	updated() {
-		console.log(`this is mix component`)
-	}
 }
 </script>
 <style>

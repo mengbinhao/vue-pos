@@ -18,7 +18,7 @@ export const Service = axios.create({
 Service.interceptors.request.use(config => {
 	//can add token here
 	//const token = store.state.token;
-  //config.headers.common['Authorization'] = token
+  //config.headers.common['Authorization'] = `token ${auth.loggedIn()}`
 	loading = Loading.service({
 		lock: true,
 		text: 'loading...',
@@ -32,7 +32,7 @@ Service.interceptors.request.use(config => {
 Service.interceptors.response.use(response => {
 	loading.close()
 	return response.data
-}, err => {
+}, error => {
 	//console.log(err)
 	// handle err here
 	// if (error.response.status) {
@@ -51,7 +51,7 @@ Service.interceptors.response.use(response => {
 	// 	return Promise.reject(error.response)
 	// }
 	Message({
-		message: `network error ${err.message}`,
+		message: `network error ${error.message}`,
 		type: 'error',
 		duration: 3000
 	})

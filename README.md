@@ -23,7 +23,9 @@ npm run lint
       serve -s dist
       ```
       2. `webpack-bundle-analyzer`
-         -  `npm i build`看三种状态
+         -  `npm run build`看三种状态
+      3. **`npm run build -- --report`**
+      4. `vue inspect`
 2. mockplus draw prototype
 ![](./doc/images/page.png)
 3. vue
@@ -41,6 +43,8 @@ npm run lint
     <TestComponent :title.sync="title" />
    ```
 4. vue-router`vue add router`
+   1. route guard
+   2. redirect
 5. vuex`vue add vuex`
 6. axios
    1. created hook to fetch data
@@ -52,8 +56,8 @@ npm run lint
         })
       )
    ```
-   3. build tabObjs after sync fetch data from server
-   4. encapsulate axios (service.js、request.js)
+   1. build tabObjs after sync fetch data from server
+   2. encapsulate axios (service.js、request.js)
 7. [阿里巴巴矢量图](https://www.iconfont.cn/)
   - **sysmbol**
   - font class
@@ -65,3 +69,4 @@ npm run lint
       2. getSummaries
 9. [sm图床](https://sm.ms/)
 10. [easy-mock](https://www.easy-mock.com)
+11. use sass

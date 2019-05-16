@@ -9,22 +9,21 @@
 
 <script>
 import LeftNav from './components/common/LeftNav'
-import Pos from './components/pages/Pos'
 
 export default {
   name: 'app',
   components: {
-    LeftNav,
-    Pos
+    LeftNav
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$color:#EFF2F7;
 .main{
   float:left;
   width:95%;
-  background-color: #EFF2F7;
+  background-color: $color;
   height:100%;
   overflow: auto;
 }

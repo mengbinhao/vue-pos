@@ -5,17 +5,23 @@ import Home from '@/components/pages/Home'
 import Cart from '@/components/pages/Cart'
 import Statistics from '@/components/pages/Statistics'
 import Profile from '@/components/pages/Profile'
+import Error from '@/components/pages/Error'
+import isLogin from './utils/auth'
 
 Vue.use(Router)
 
-export default new Router({
+const router =  new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'Pos',
-      component: Pos
+      component: Pos,
+      beforeEnter: (to, from, next) => {
+        console.log(`enter Pos`)
+        next()
+      }
     },
     {
       path: '/home',
@@ -36,7 +42,10 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile,
-      alias: '/myself'
+      alias: '/myself',
+      meta: {
+        requiresLogin: true
+      }
     },
     {
       path:'/index',
@@ -44,7 +53,28 @@ export default new Router({
     },
     {
       path:'*',
-      redirect:'/'
+      component: Error
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  //console.log(to)
+  //to.matched
+  if (to.meta.requiresLogin) {
+    if (!isLogin()) {
+      next({
+        path: '/'
+      })
+    } else {
+      next()
+    }
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  console.log(`global after router guard`)
+})
+
+export default router
