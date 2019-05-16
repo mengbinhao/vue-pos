@@ -65,14 +65,3 @@ npm run lint
       2. getSummaries
 9. [sm图床](https://sm.ms/)
 10. [easy-mock](https://www.easy-mock.com)
-11.  build
-    1. 打包公共资源路径`assetsPublicPath:'./'`
-    2. serve
-    ```bash
-    npm i -g serve
-    # -s 参数的意思是将其架设在 Single-Page Application 模式下
-    # 这个模式会处理即将提到的路由问题
-    serve -s dist
-    ```
-    3. `webpack-bundle-analyzer`
-       -  `npm i build`看三种状态
