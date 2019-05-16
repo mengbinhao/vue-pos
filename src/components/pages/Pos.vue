@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import axios from "axios"
-import PosOrder from "./PosOrder"
-import PosOftenGoods from "./PosOftenGoods"
-import PosTypeGoods from "./PosTypeGoods"
+import PosOrder from './PosOrder'
+import PosOftenGoods from './PosOftenGoods'
+import PosTypeGoods from './PosTypeGoods'
+import { getOftenGoodsAndTypeGoods } from '@/plugins/request'
 
 export default {
   name: "Pos",
@@ -48,12 +48,10 @@ export default {
     };
   },
   created() {
-    axios.all([this.getOftenGoods(), this.getTypeGoods()]).then(
-      axios.spread((acct, perms) => {
-        this.oftenGoods = acct.data
-        this.displayTabs = this.buildTabObj(perms.data)
-      })
-    )
+    getOftenGoodsAndTypeGoods().then(data => {
+      this.oftenGoods = data[0]
+      this.displayTabs = this.buildTabObjs(data[1])
+    })
   },
   mounted: function() {
     var orderHeight = document.body.clientHeight
@@ -86,16 +84,6 @@ export default {
     deleteGoods(goods) {
       this.tableData = this.tableData.filter(
         item => item.goodsId !== goods.goodsId
-      )
-    },
-    getOftenGoods() {
-      return axios.get(
-        "https://www.easy-mock.com/mock/5cd948c7a8b9c917e15e7f4d/oftenGoods"
-      )
-    },
-    getTypeGoods() {
-      return axios.get(
-        "https://www.easy-mock.com/mock/5cd948c7a8b9c917e15e7f4d/typeGoods"
       )
     },
     deleteAllGoods() {
@@ -135,7 +123,7 @@ export default {
         })
       }
     },
-    buildTabObj(data) {
+    buildTabObjs(data) {
       let tabObjs = []
       data.forEach((item, index) => {
         let {label, name} = this.subTabs[index],

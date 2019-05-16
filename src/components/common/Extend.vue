@@ -2,7 +2,7 @@
 <script>
 export default {
   created() {
-    console.log(`this is extend component`)
+    //console.log(`this is extend component`)
   },
   methods: {
     add() {

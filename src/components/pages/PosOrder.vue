@@ -40,7 +40,7 @@ export default {
   mixins: [Mix],
   extends: Extend,
   created() {
-    console.log(`this is own created`)
+    //console.log(`this is own created`)
   },
   updated() {
     console.log(`this is own updated`)

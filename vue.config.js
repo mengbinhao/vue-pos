@@ -15,7 +15,7 @@ module.exports = {
 				new UglifyJsPlugin({
 					parallel: true
 				}),
-			],
-		},
+			]
+		}
 	}
 }
