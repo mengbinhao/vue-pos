@@ -27,10 +27,9 @@ export default {
 		}
 	},
 	methods: {
-		 test(e) {
-			 //console.log(e)
-			 this.$emit('update:title', 'new title from Child')
-		 }
+		test() {
+			this.$emit('update:title', 'new title from Child')
+		}
 	}
 }
 </script>

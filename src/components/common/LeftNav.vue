@@ -44,10 +44,10 @@ export default {
   name: "LeftNav",
   methods: {
     goback() {
-      this.$router.go(-1);
+      this.$router.go(-1)
     },
     goforward() {
-      this.$router.go(1);
+      this.$router.go(1)
     }
   }
 };

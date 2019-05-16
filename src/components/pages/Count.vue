@@ -21,7 +21,7 @@
 			actions
 			<button @click="addAction">add count</button>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  		<button @click="reduceAction">reduce count</button>
+			<button @click="reduceAction">reduce count</button>
 		</div>
 		<br>
 		<br>
@@ -41,8 +41,8 @@ export default {
 		}
 	},
 	methods: {
-		 ...mapMutations(['add','reduce']),
-		 ...mapActions(['addAction','reduceAction'])
+		...mapMutations(['add','reduce']),
+		...mapActions(['addAction','reduceAction'])
 	},
 	//get data from vuex then reactive to vue
 	//way 1

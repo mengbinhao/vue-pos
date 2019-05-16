@@ -1,11 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Pos from '@/components/pages/Pos'
-import Home from '@/components/pages/Home'
-import Cart from '@/components/pages/Cart'
-import Statistics from '@/components/pages/Statistics'
-import Profile from '@/components/pages/Profile'
-import Error from '@/components/pages/Error'
 import isLogin from './utils/auth'
 
 Vue.use(Router)
@@ -17,7 +11,7 @@ const router =  new Router({
     {
       path: '/',
       name: 'Pos',
-      component: Pos,
+      component: () => import('@/components/pages/Pos'),
       beforeEnter: (to, from, next) => {
         console.log(`enter Pos`)
         next()
@@ -26,22 +20,22 @@ const router =  new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: () => import('@/components/pages/Home')
     },
     {
       path: '/cart',
       name: 'Cart',
-      component: Cart
+      component: () => import('@/components/pages/Cart')
     },
     {
       path: '/statistics',
       name: 'Statistics',
-      component: Statistics
+      component: () => import('@/components/pages/Statistics')
     },
     {
       path: '/profile',
       name: 'Profile',
-      component: Profile,
+      component: () => import('@/components/pages/Profile'),
       alias: '/myself',
       meta: {
         requiresLogin: true
@@ -53,7 +47,7 @@ const router =  new Router({
     },
     {
       path:'*',
-      component: Error
+      component: () => import('@/components/pages/Error')
     }
   ]
 })

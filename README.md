@@ -45,6 +45,7 @@ npm run lint
 4. vue-router`vue add router`
    1. route guard
    2. redirect
+   3. 路由懒加载
 5. vuex`vue add vuex`
 6. axios
    1. created hook to fetch data
