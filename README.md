@@ -34,7 +34,7 @@ npm run lint
    3. extends
    4. mixins
    5. extends
-   6. computed
+   6. computed(getter、setter)
    7. custom directive
    8. \$attrs / \$listeners
    9. .sync
@@ -45,7 +45,7 @@ npm run lint
 4. vue-router`vue add router`
    1. route guard
    2. redirect
-   3. 路由懒加载
+   3. 路由懒加载(可以扩展到所有组件)`ctrl + shift + p -> coverage -> record`
 5. vuex`vue add vuex`
 6. axios
    1. created hook to fetch data

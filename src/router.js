@@ -38,7 +38,8 @@ const router =  new Router({
       component: () => import('@/components/pages/Profile'),
       alias: '/myself',
       meta: {
-        requiresLogin: true
+        requiresLogin: true,
+        keepAlive: true //可以结合keep-alive
       }
     },
     {
@@ -52,6 +53,7 @@ const router =  new Router({
   ]
 })
 
+///globale beforeEach
 router.beforeEach((to, from, next) => {
   //console.log(to)
   //to.matched
@@ -67,8 +69,9 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-router.afterEach((to, from) => {
-  console.log(`global after router guard`)
-})
+//globale afterEach
+// router.afterEach((to, from) => {
+//   console.log(`global after router guard`)
+// })
 
 export default router

@@ -8,6 +8,7 @@
           @deleteGoods="deleteGoods"
           @deleteAllGoods="deleteAllGoods"
           @checkout="checkout"
+          :canNotBeChangedInChild="canNotBeChangedInChild"
         />
       </el-col>
       <el-col :span="17">
@@ -44,7 +45,8 @@ export default {
         {label:'小食', name:'third'},
         {label:'套餐', name:'forth'}
       ],
-      displayTabs:[]
+      displayTabs:[],
+      canNotBeChangedInChild: 'canNotBeChangedInChild'
     };
   },
   created() {

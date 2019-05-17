@@ -25,6 +25,7 @@
         <el-button type="warning" size="small">挂单</el-button>
         <el-button type="danger" size="small" @click="deleteAllGoods">删除</el-button>
         <el-button type="success" size="small" @click="checkout">结账</el-button>
+        <el-button type="success" size="small" @click="changeParent">changeParent</el-button>
       </div>
     </el-tab-pane>
     <el-tab-pane label="挂单" name="second">挂单</el-tab-pane>
@@ -49,6 +50,10 @@ export default {
     tableData: {
       type: Array,
       required: true
+    },
+    canNotBeChangedInChild: {
+      type: String,
+      required: true
     }
   },
   data() {
@@ -58,6 +63,9 @@ export default {
     }
   },
   methods: {
+    changeParent() {
+      console.log(this.$parent.canNotBeChangedInChild = '1111')
+    },
     handleClick() {},
     getSummaries(param) {
       const { columns, data } = param

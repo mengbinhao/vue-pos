@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 1
+    count: 1,
+    scrollTop: 0 //全局记录滚动位置
   },
   mutations: {
     add(state, num) {
