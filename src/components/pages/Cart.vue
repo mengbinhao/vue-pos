@@ -15,11 +15,6 @@ export default {
 	},
 	components:{
 		TestComponent
-	},
-	methods: {
-		test() {
-			console.log(`testtesttest`)
-		}
 	}
 }
 </script>

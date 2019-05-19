@@ -13,14 +13,14 @@ const router =  new Router({
       name: 'Pos',
       component: () => import('@/components/pages/Pos'),
       beforeEnter: (to, from, next) => {
-        console.log(`enter Pos`)
         next()
       }
     },
     {
       path: '/home',
       name: 'Home',
-      component: () => import('@/components/pages/Home')
+      component: () => import('@/components/pages/Home'),
+      props: { default: true, sidebar: false }
     },
     {
       path: '/cart',
@@ -55,7 +55,6 @@ const router =  new Router({
 
 ///globale beforeEach
 router.beforeEach((to, from, next) => {
-  //console.log(to)
   //to.matched
   if (to.meta.requiresLogin) {
     if (!isLogin()) {
@@ -71,7 +70,6 @@ router.beforeEach((to, from, next) => {
 
 //globale afterEach
 // router.afterEach((to, from) => {
-//   console.log(`global after router guard`)
 // })
 
 export default router

@@ -33,7 +33,6 @@ Service.interceptors.response.use(response => {
 	loading.close()
 	return response.data
 }, error => {
-	//console.log(err)
 	// handle err here
 	// if (error.response.status) {
 	// 	switch (error.response.status) {

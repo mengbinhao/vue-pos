@@ -2,7 +2,7 @@
 	<div>
 		{{ title }} <br>
 		{{ childNeed }} <br>
-		<button @click="test($event)">emit</button>
+		<button @click="$emit('update:title', 'new title from Child')">sync qualifiers</button>
 	</div>
 </template>
 <script>
@@ -14,7 +14,7 @@ export default {
 	},
 	mounted() {
 		//console.log(this.$attrs)
-		console.log(process.env.VUE_APP_TITLE)
+		//console.log(process.env.VUE_APP_TITLE)
 	},
 	props: {
 		title: {
@@ -24,11 +24,6 @@ export default {
 		childNeed: {
 			type: String,
 			required: true
-		}
-	},
-	methods: {
-		test() {
-			this.$emit('update:title', 'new title from Child')
 		}
 	}
 }

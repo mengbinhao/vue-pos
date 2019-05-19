@@ -25,13 +25,11 @@ export default new Vuex.Store({
       setTimeout(()=>{
         context.commit('add')
       },2000)
-      console.log('before add')
     },
     reduceAction({commit}){
       setTimeout(()=>{
         commit('reduce')
       },2000)
-      console.log('before reduce')
     }
   },
   getters: {
